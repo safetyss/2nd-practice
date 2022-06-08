@@ -4,8 +4,11 @@ import datetime
 
 from PIL import Image
 from PIL import Image
-Img = Image.open("Money.jpg")
+Img = Image.open("TrackExpense.jpg")
 st.image(Img, width=800)
+
+Img2 = Image.open("Money.jpg")
+st.sidebar.image(Img2, width=300)
 
 
 st.title("MY EXPENSE TRACKER")
@@ -53,7 +56,7 @@ margin = total_income - expense_total
 if margin>= 0:
     st.success("Your total surplus next month will be (NGN)" + str(margin))
 else:
-    st.warning("Check your spending habit!! You running a deficit of (NGN)" + str(margin))
+    st.warning("Check your spending habit!! You are running a deficit of (NGN)" + str(margin))
         
         
 st.write("Thank you for using this tool")
