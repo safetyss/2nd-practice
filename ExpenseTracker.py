@@ -1,23 +1,32 @@
 import streamlit as st
 
+import datetime 
+
 from PIL import Image
 from PIL import Image
 Img = Image.open("Money.jpg")
 st.image(Img, width=800)
 
 
-st.title("My Expense Tracker")
+st.title("MY EXPENSE TRACKER")
 
 st.header("Get a grip on your income and manage your finances better!!!")
+
+year = st.sidebar.selectbox('Year', range(2021, 2040))
+
+month = st.sidebar.selectbox('Month', range(1,13))
+
+
 
 st.subheader("Income Category")
 
 income = st.number_input('Enter your monthly income (NGN): ')
-additional = st.number_input('Enter your additional income (NGN): ')
+additional = st.number_input('Enter any additional income (NGN): ')
 
 total_income = income + additional
 st.write("Great! Your total income next month will be (NGN)" + str(total_income))
-st.write("You will get some expenses data...")
+
+
 
 st.subheader('Expenditure Category')
 
@@ -37,14 +46,18 @@ def expense_category():
     return total_expenses
 
 expense_total = expense_category()
-st.write("Great! Your total expenses next month will be (NGN)" + str(expense_total))
+if(st.button('Calculate Total Expenses')):
+    st.write("Your total expenses next month will be (NGN)" + str(expense_total))
+
 margin = total_income - expense_total
 if margin>= 0:
-    st.markdown("Your total surplus next month will be (NGN)" + str(margin))
+    st.success("Your total surplus next month will be (NGN)" + str(margin))
 else:
-    st.markdown("You will come up (NGN)" +str(margin) + "negative")
+    st.warning("Check your spending habit!! You running a deficit of (NGN)" + str(margin))
+        
         
 st.write("Thank you for using this tool")
+st.button("Exit")
 
 
 
