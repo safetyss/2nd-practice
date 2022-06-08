@@ -5,7 +5,7 @@ import datetime
 from PIL import Image
 from PIL import Image
 Img = Image.open("TrackExpense.jpg")
-st.image(Img, width=800)
+st.image(Img, width=1000)
 
 Img2 = Image.open("Money.jpg")
 st.sidebar.image(Img2, width=300)
