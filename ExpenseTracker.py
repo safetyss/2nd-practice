@@ -2,7 +2,7 @@ import streamlit as st
 
 from PIL import Image
 from PIL import Image
-Img = Image.open("TrackExpense.jpg")
+Img = Image.open("Money.jpg")
 st.image(Img, width=800)
 
 
