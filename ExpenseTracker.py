@@ -5,7 +5,7 @@ import datetime
 from PIL import Image
 from PIL import Image
 Img = Image.open("TrackExpense.jpg")
-st.image(Img, width=1000)
+st.image(Img, width=700)
 
 Img2 = Image.open("Money.jpg")
 st.sidebar.image(Img2, width=300)
@@ -52,11 +52,11 @@ expense_total = expense_category()
 if(st.button('Calculate Total Expenses')):
     st.write("Your total expenses next month will be (NGN)" + str(expense_total))
 
-margin = total_income - expense_total
-if margin>= 0:
-    st.success("Your total surplus next month will be (NGN)" + str(margin))
+difference = total_income - expense_total
+if difference>= 0:
+    st.success("Your total surplus next month will be (NGN)" + str(difference))
 else:
-    st.warning("Check your spending habit!! You are running a deficit of (NGN)" + str(margin))
+    st.warning("Check your spending habit!! You are running a deficit of (NGN)" + str(difference))
         
         
 st.write("Thank you for using this tool")
