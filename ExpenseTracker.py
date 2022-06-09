@@ -60,7 +60,6 @@ else:
         
         
 st.write("Thank you for using this tool")
-st.button("Exit")
 
 
 
